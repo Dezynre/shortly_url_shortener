@@ -1,0 +1,570 @@
+
+body {
+    background-color: rgb(250,250,250);
+    font-size: 18px;
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* the following styles are associated with the site's navigation menu */
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em;
+    border: 1px dashed hsl(180, 66%, 49%);
+    max-width: 100%;
+}
+
+.nav_links {
+    z-index: 10;
+}
+
+@keyframes rotate_logo {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.logo {
+    width: 100px;
+    animation-name: rotate_logo;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+}
+@media screen and (max-width: 799px) {
+    .nav_links {
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        background-color: hsl(257, 27%, 26%);
+        width: 80%;
+        top: 4.5em;
+        align-items: center;
+        left: 50%;
+        transform: translate(-50%, 0);
+        border-radius: 20px;
+        padding: 2em;
+        animation-name: animate_nav_links;
+        animation-duration: 500ms;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+    }
+    @keyframes animate_nav_links {
+        from {
+            opacity: 0;
+            top: 6em
+        }
+        to {
+            opacity: 1;
+            top: 4.5em;
+        }
+    }
+    .nav_links_normal {
+        border-bottom: 1px solid hsl(257, 7%, 63%);
+    }
+    .nav_links_auth, .nav_links_normal {
+        display: flex;
+        flex-direction: column;
+    }
+    .nav_links a {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: rgb(250,250,250);
+        padding: .5em 1em;
+    }
+    #sign_up_button {
+        background-color: hsl(180, 66%, 49%);
+        background: linear-gradient(0deg, rgba(42,207,207,1) 0%, rgba(171,142,46,1) 100%);
+        border-radius: 20px;
+    }
+
+}
+.bar {
+    width: 35px;
+    height: 4px;
+    margin: 4px;
+    margin-right: 0;
+    background-color: hsl(257, 7%, 63%);
+}
+
+@media screen and (min-width: 800px) {
+    nav {
+        padding: 1em 3em;
+    }
+    .menu_icon {
+        display: none;
+    }
+    .nav_links {
+        display: flex;
+        width: 90%;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .nav_links_normal > a, .nav_links_auth > a {
+        color: hsl(257, 7%, 63%);
+        text-decoration: none;
+        padding: 0.5em 1em;
+        font-weight: 600;
+        animation-name: animate_links;
+        animation-duration: 700ms;
+        animation-delay: 50ms;
+        animation-timing-function: ease-in-out;
+    }
+    @keyframes animate_links {
+        from {
+            position: relative;
+            left: -20px;
+            opacity: 0;
+        }
+        to {
+            position: relative;
+            left: 0px;
+            transform: rotate(0deg);
+            opacity: 1;
+        }
+    }
+    .nav_links_normal > a:hover, .nav_links_auth > a:hover {
+        color: hsl(260, 8%, 14%);
+    }
+    #sign_up_button {
+        background-color: hsl(180, 66%, 49%);
+        background: linear-gradient(0deg, rgba(42,207,207,1) 0%, rgba(171,142,46,1) 100%);
+        color: rgb(250,250,250);
+        border-radius: 17px;
+        padding: .4em 1em;
+    }
+    #sign_up_button:hover {
+        background-color: hsla(180, 66%, 49%, 0.6);
+    }
+}
+
+/* the following styles are associated with the site's hero section */
+.hero_section {
+    width: 100%;
+    overflow-x: hidden;
+    padding: .7em 2em;
+    padding-bottom: 2em;
+}
+.hero_image {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.hero_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero_text > h1, .hero_text > p {
+    text-align: center;
+    color: hsl(257, 27%, 26%);
+}
+.hero_text > h1 {
+    font-size: 30px;
+}
+.hero_text > p {
+    color: hsl(257, 7%, 63%);
+}
+.hero_text > h1, .hero_text > p, .hero_text > a {
+    margin-top: 1em;
+}
+.hero_text a {
+    background-color: hsl(180, 66%, 49%);
+    background: linear-gradient(0deg, rgba(42,207,207,1) 0%, rgba(59,48,84,1) 100%);
+    color:rgb(250,250,250);
+    text-decoration: none;
+    padding: .4em 1.5em;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 20px;
+}
+.hero_text a:hover {
+    background-color: hsla(180, 66%, 49%, 0.6);
+}
+
+@media screen and (min-width: 800px) {
+    .hero_section {
+        padding: .7em 3em;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .hero_text {
+        align-items: flex-start;
+        padding-right: 3em;
+        justify-content: center;
+    }
+    .hero_text > h1, .hero_text > p {
+        text-align: left;
+    }
+    .hero_text > h1 {
+        margin-top: 0;
+    }
+}
+
+@media screen and (min-width:914px) {
+    .hero_text > a, .hero_text p {
+        margin-top: 2.5em;
+    }
+    
+    .hero_image img {
+        max-width: 85%;
+    }
+}
+
+/* the following styles are associated with the link shortening section*/
+.app {
+    background-color: hsla(0, 0%, 75%, 0.4);
+    padding: .7em 2em;
+    padding-top: 2em;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    width: 100%;
+}
+#form {
+    background-image: url("./images/bg-shorten-mobile.svg");
+    background-size: 70%;
+    background-position-y: -1.5em;
+    background-color: hsl(257, 27%, 26%);
+    background-position-x: right;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: .5em 1em;
+    border-radius: 6px;
+    overflow-x: hidden;
+}
+ #form input {
+     display: block;
+     width: 100%;
+     border: 1px solid hsl(180, 66%, 49%);
+     background-color: rgb(250,250,250);
+     border-radius: 5px;
+     padding: .5em;
+ }
+ #form button {
+     display: block;
+     width: 100%;
+     background-color: hsl(180, 66%, 49%);
+     background: linear-gradient(0deg, rgba(42,207,207,1) 0%, rgba(171,142,46,1) 100%);
+     border: none;
+     border-radius: 5px;
+     padding: .5em;
+     color: rgb(250,250,250);
+     font-weight: 600;
+ }
+ #form button:hover {
+     background-color: hsla(180, 66%, 49%, 0.6);
+     cursor: pointer;
+ }
+ #form button, #form input {
+     margin: .8em 0;
+ }
+ .shortened_links {
+     font-weight: 600;
+     background-color: rgb(250,250,250);
+     border-radius: 7px;
+     padding: .8em 0;
+     margin-top: 1em;
+     width: 100%;
+ }
+ .original_link, .new_link {
+     padding: .5em 1em;
+ }
+ .original_link {
+     border-bottom: 1px solid rgb(180,180,180);
+     color: hsl(257, 27%, 26%);
+ }
+ .new_link {
+     color: hsl(180, 66%, 49%);
+ }
+ .copy_button {
+     margin: 0 1em;
+     padding: .3em 2em;
+     border: none;
+     background-color: hsl(180, 66%, 49%);
+     background: linear-gradient(0deg, rgba(42,207,207,1) 0%, rgba(59,48,84,1) 100%);
+     color: rgb(250,250,250);
+     border-radius: 8px;
+ }
+ .copy_button:hover {
+     background-color: hsla(180, 66%, 49%, 0.6);
+     cursor: pointer;
+ }
+
+@media screen and (min-width: 800px) {
+    .app {
+        padding: 1em 3em;
+        padding-top: 3em;
+    }
+
+    #form {
+        flex-direction: row;
+        background-image: url("./images/bg-shorten-desktop.svg");
+    }
+    #form input {
+        margin-right: 1em;
+        flex-basis: 85%;
+    }
+    #form button {
+        flex-basis: 15%;
+    }
+    .links_card {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .original_link {
+        border: none;
+        margin-right: auto;
+    }
+}
+
+/* the following styles are associated with the advanced statistics section */
+
+.advanced_stats {
+    background-color: hsla(0, 0%, 75%, 0.4);
+    overflow-x: hidden;
+    padding: 1em 2.5em
+}
+
+.advanced_stats h2, .advanced_stats p {
+    text-align: center;
+    padding: .5em;
+    color: hsl(257, 27%, 26%);
+}
+
+.advanced_stats p {
+    max-width: 400px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+/* the following styles are associated with the features section */
+
+.features {
+    background-color: hsla(0, 0%, 75%, 0.4);
+    padding: 1em 2em;
+    overflow-x: hidden;
+}
+
+.features_card {
+    border-radius: 10px;
+    background-color: rgb(250,250,250);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 1em;
+    padding-bottom: 2em;
+    margin: 2em 0;
+    overflow-x: hidden;
+}
+
+.features_card picture {
+    width: 65px;
+    height: 65px;
+    background-color: hsl(257, 27%, 26%);
+    background: linear-gradient(0deg, rgba(42,207,207,1) 0%, rgba(59,48,84,1) 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    overflow-x: hidden;
+    margin-bottom: .7em;
+}
+
+.features_card h3 {
+    text-align: center;
+    overflow-x: hidden;
+    color: hsl(257, 27%, 26%);
+    padding-bottom: 1em;
+}
+
+.features_card p {
+    text-align: center;
+    overflow-x: hidden;
+    max-width: 600px;
+    margin: 0 auto;
+    color: hsl(257, 27%, 26%);
+}
+
+@media screen and (min-width: 800px) {
+    .features {
+        padding: 3em;
+    }
+}
+
+@media  screen and (min-width: 1050px) {
+    .features {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .features_card {
+        margin: 2em;
+        margin-top: 1em;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+}
+/* the following styles are associated with the boost section */
+.boost {
+    padding: 1.5em 2em;
+    background-color: hsl(257, 27%, 26%);
+    background-image: url("./images/bg-boost-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position-x: right;
+    background-position-y: -25px;
+}
+.boost h3 {
+    text-align: center;
+    color: rgb(250,250,250);
+}
+.boost a {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    background-color: hsl(180, 66%, 49%);
+    background: linear-gradient(0deg, rgba(42,207,207,1) 0%, rgba(171,142,46,1) 100%);
+    text-decoration: none;
+    text-align: center;
+    color: rgb(250,250,250);
+    font-weight: 500;
+    padding: .3em .7em;
+    border-radius: 25px;
+    margin-top: 1em;
+}
+.boost a:hover {
+    background-color: hsla(180, 66%, 49%, 0.6);
+}
+@media  screen and (min-width: 800px) {
+    .boost {
+        padding: 3em;
+        background-image: url("./images/bg-boost-desktop.svg");
+        background-position-x: center;
+        background-position-y: center;
+        background-size: contain;
+    }
+    .boost a {
+        padding: .4em .8em;
+    }
+}
+
+/* the following styles are associated with the footer section*/
+.footer {
+    background-color: hsl(260, 8%, 14%);
+    padding: 2em;
+    overflow-x: hidden;
+}
+
+.footer .logo {
+    display: block;
+    margin: 0 auto;
+    margin-top: 1.2em;
+    animation-iteration-count: infinite;
+}
+.Features, .Company, .Resources, .social {
+    margin-top: 1.2em;
+}
+.Features>h3, .Resources>h3, .Company>h3, .Features>p, .Resources>p, .Company>p {
+    text-align: center;
+    color: hsl(257, 7%, 70%);
+}
+.Features>h3:hover, .Resources>h3:hover, .Company>h3:hover, .Features>p:hover, .Resources>p:hover, .Company>p:hover {
+    color: hsl(180, 66%, 49%);
+    cursor: pointer;
+}
+.Features>h3, .Resources>h3, .Company>h3 {
+    font-weight: 500;
+}
+.social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 1.2em;
+}
+
+@media screen and (min-width: 800px) {
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 3em;
+    }
+    .social {
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .Features, .Company, .Resources, .social {
+        margin: 0;
+    }
+    .Features>h3, .Resources>h3, .Company>h3, .Features>p, .Resources>p, .Company>p {
+        text-align: left;
+    }
+    .social picture {
+        padding: 0 .5em;
+    }
+    .footer h1 {
+        padding: .5em;
+    }
+    .footer_logo_wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0;
+    }
+}
+.attribution { font-size: 15px; text-align: center;
+    background-color: rgb(10,10,10);
+    padding: 2em;
+    font-style: italic;
+    color: rgb(230,230,230);
+    overflow-x: hidden;
+}
+.attribution a { color: hsl(228, 45%, 44%);
+    text-decoration: none;
+    color: hsl(180, 66%, 49%);
+}
+/* Reusable CSS */
+.display_block {
+    display: block;
+}
+
+/* the following styles are associated with the scroll animations */
+
+.animate_on_scroll {
+    position: relative;
+    transform: translateY(2em);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.animate_on_scroll.active {
+    transform: translateY(0);
+    opacity: 1;
+}
