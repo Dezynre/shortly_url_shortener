@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Inspect source code](https://github.com/Dezynre/shortly_url_shortener)
+- Live Site URL: [View live site URL](https://dezynre.github.io/shortly_url_shortener/)
 
 ## My process
 
@@ -53,6 +53,6 @@ I learned how to implement scroll animations. This is a common pattern in modern
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/ExpertChurcher)
+- Website - [Chacha Ian](https://github.com/Dezynre)
+- Frontend Mentor - [Chacha Ian](https://www.frontendmentor.io/profile/Dezynre)
+- Twitter - [Chacha Ian](https://www.twitter.com/ExpertChurcher)
